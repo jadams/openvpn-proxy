@@ -15,5 +15,5 @@ ip route del 128.0.0.0/1 via $VPN_GW dev tun11
 ip route add table 200 default via $VPN_GW dev tun11
 
 iptables -t mangle -I PREROUTING -i br0 -p tcp -m multiport --dport 80,443 -j MARK --set-mark 1
-iptables -t mangle -I PREROUTING -i br0 -p tcp -s 10.10.92.7 -j MARK --set-mark 1
-iptables -t mangle -I PREROUTING -i br0 -p tcp -s 10.10.92.214 -j ACCEPT
+iptables -t mangle -I PREROUTING -i br0 -p tcp -s xxx.xxx.xxx.xxx -j MARK --set-mark 1
+iptables -t mangle -I PREROUTING -i br0 -p tcp -s xxx.xxx.xxx.xxx -j ACCEPT
